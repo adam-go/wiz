@@ -1,9 +1,19 @@
+var _ = {
+    bind: function (obj, meth) {
+        var method = obj[meth];
+
+        return function () {
+            method.apply(obj, arguments);
+        }
+    }
+}
+
 var Wizard = function (selector) {
     var n = this.jNode = $(selector);
     this.slides = $('.slides', n);
     this.currentPane = $('fieldset:first-child', this.slides);
-    $('.actions button.next', n).on('click', _.bind(this.nextSlide, this));
-    $('.actions button.prev', n).on('click', _.bind(this.prevSlide, this));
+    $('.actions button.next', n).on('click', _.bind(this, 'nextSlide'));
+    $('.actions button.prev', n).on('click', _.bind(this, 'prevSlide'));
 }
 
 Wizard.prototype = {
