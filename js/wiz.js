@@ -27,10 +27,11 @@ Wizard.prototype = {
     
     moveSlide: function (slide, cb) {
         if(slide.length == 0) return;
-        var w = this.currentPane.outerWidth();
+        var w = this.currentPane.outerWidth() +
+            parseInt(this.currentPane.css('margin-left')) +
+            parseInt(this.currentPane.css('margin-right'));
         var ml = parseInt(this.slides.css('margin-left'));
-        this.slides.animate({marginLeft: cb(ml, w) + 'px'}, 400, 'swing');
+        this.slides.animate({marginLeft: cb(ml, w) + 'px'}, 300, 'swing');
         this.currentPane = slide;
     }
 };
-​
