@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/wiz.css" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    </head>
+    <body>
+        <div class="wizard">
+            <div class="slides">
+                <fieldset>
+                    <legend>Select your program</legend>
+                    <select>
+                        <option>Aeronautics</option>
+                        <option>Computer Science</option>
+                        <option>Management</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Computer Science Learning Outcomes</legend>
+                    <ol>
+                        <li>
+                            <p>Demonstrate the ability to troubleshoot basic hardware and software problems.</p>
+                            <textarea></textarea>
+                        </li>
+                        <li>Apply knowledge of object-oriented programming skills to write and debug programs, and to solve the given tasks using data structures such as stacks, queues, linked lists, trees, and recursion.</li>
+                        <li>Design a basic LAN, given specific parameters and constraints.</li>
+                        <li>Write simple programs in assembly language.</li>
+                    </ol>
+                </fieldset>
+                <fieldset>
+                    <legend>Management Learning Outcomes</legend>
+                    <ol>
+                        <li>Demonstrate the ability to troubleshoot basic hardware and software problems.</li>
+                        <li>Apply knowledge of object-oriented programming skills to write and debug programs, and to solve the given tasks using data structures such as stacks, queues, linked lists, trees, and recursion.</li>
+                        <li>Design a basic LAN, given specific parameters and constraints.</li>
+                        <li>Write simple programs in assembly language.</li>
+                    </ol>
+                </fieldset>
+            </div>
+            <div class="actions">
+                <button class="prev">Back</button>
+                <button class="next">Next</button>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/wiz.js"></script>​
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var w = new Wizard('.wizard');
+            });
+        </script>
+    </body>
+</html>
